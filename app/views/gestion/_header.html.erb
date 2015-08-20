@@ -22,7 +22,7 @@
                 <li><%= link_to cat_playmobil.nombre, categorias_playmobil_path(cat_playmobil.id) %></li>
             <% end %>
             <li role="separator" class="divider"></li>
-            <li><%= link_to t(:Galeria_imagenes), galerias_playmobil_path %></li>
+            <li><%= link_to t(:Galeria_imagenes), galerias_new_path %></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -33,7 +33,7 @@
                 <li><%= link_to cat_trenes.nombre, categorias_playmobil_path(cat_trenes.id) %></li>
             <% end %>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Galería de imágenes</a></li>
+            <li><a href="<%= galerias_new_path %>">Galería de imágenes</a></li>
           </ul>
         </li>
       </ul>

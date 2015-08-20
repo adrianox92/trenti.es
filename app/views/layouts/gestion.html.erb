@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebAdrian</title>
+  <%= stylesheet_link_tag    'application', 'gestion.scss', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'gestion.js', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render partial: 'frontend/header' %>
+<%= yield %>
+
+</body>
+</html>

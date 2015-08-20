@@ -1,0 +1,17 @@
+.owl-carousel .owl-item div img{
+max-height: 250px;
+}
+.owl-carousel .owl-controls .owl-nav .owl-prev, .owl-carousel .owl-controls .owl-nav .owl-next {
+    font-size: 18px;
+    display: inline-block;
+}
+.owl-carousel .owl-controls .owl-nav .owl-next, .owl-carousel .owl-controls .owl-nav .owl-prev{
+    color: #0095d4;
+}
+.owl-carousel .owl-controls .owl-nav .owl-prev {
+    margin-right: 10px;
+}
+.owl-carousel .owl-controls{
+    float: right;
+    margin-top: 15px;
+}
