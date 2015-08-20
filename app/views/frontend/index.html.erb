@@ -1,9 +1,42 @@
 ﻿<div class="container">
-  <div class="owl-carousel">
-    <%= 12.times do |i| %>
-        <div>
-          <img src="http://placehold.it/<%= i %>" class="img-responsive center-block">
+  <div class="row">
+    <div class="owl-carousel col-xs-12">
+      <%= 12.times do |i| %>
+          <div>
+            <img src="http://placehold.it/1140x250" class="img-responsive center-block">
+          </div>
+      <% end %>
+    </div>
+
+    <div class="col-xs-12 col-sm-8">
+      <div class="row">
+        <div class="col-xs-12">
+          <%= 3.times do |i| %>
+              <div class="content-novedades">
+                <header>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h4>Novedad <%= 1 %></h4>
+                    </div>
+                    <div class="col-xs-4">
+                      <i class="fa fa-calendar"></i>Fecha de publicación
+                    </div>
+                    <div class="col-xs-4">
+                      <i class="fa fa-user"></i> Autor
+                    </div>
+                    <div class="col-xs-4">
+                      <i class="fa fa-comments"></i>Comentarios
+                    </div>
+                  </div>
+                </header>
+                <img src="http://placehold.it/750x150">
+              </div>
+          <% end %>
         </div>
-    <% end %>
+      </div>
+    </div>
+    <div class="hidden-xs col-sm-4">
+      2
+    </div>
   </div>
 </div>

@@ -46,6 +46,8 @@ gem 'bootstrap-datepicker-rails', '1.3.0.2'
 # Errores 500
 gem 'exception_notification', '~> 4.0.1'
 
+gem 'font-awesome-sass'
+
 group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
