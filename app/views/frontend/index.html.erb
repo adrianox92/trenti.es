@@ -3,7 +3,7 @@
     <div class="owl-carousel col-xs-12">
       <%= 12.times do |i| %>
           <div>
-            <img src="http://placehold.it/1140x250" class="img-responsive center-block">
+            <img src="http://placehold.it/1140x300" class="img-responsive center-block">
           </div>
       <% end %>
     </div>
@@ -16,27 +16,29 @@
                 <header>
                   <div class="row">
                     <div class="col-xs-12">
-                      <h4>Novedad <%= 1 %></h4>
+                      <h4>Novedad <%= i %></h4>
                     </div>
                     <div class="col-xs-4">
-                      <i class="fa fa-calendar"></i>Fecha de publicación
+                      <i class="fa fa-calendar iconos-novedades"></i>Fecha de publicación
                     </div>
                     <div class="col-xs-4">
-                      <i class="fa fa-user"></i> Autor
+                      <i class="fa fa-user iconos-novedades"></i> Autor
                     </div>
                     <div class="col-xs-4">
-                      <i class="fa fa-comments"></i>Comentarios
+                      <i class="fa fa-comments iconos-novedades"></i>Comentarios
                     </div>
                   </div>
                 </header>
-                <img src="http://placehold.it/750x150">
+                <img src="http://placehold.it/750x250" class="img-responsive">
+
+                <p class="descripcion-novedad">Aquí va el contenido del post que se ha publicado y está como destacado / últimas publicaciones</p>
               </div>
           <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="hidden-xs col-sm-4">
-      2
+          </div>
     </div>
   </div>
+  <div class="hidden-xs col-sm-4">
+    2
+  </div>
+</div>
 </div>

@@ -1,5 +1,5 @@
 .owl-carousel .owl-item div img{
-max-height: 250px;
+
 }
 .owl-carousel .owl-controls .owl-nav .owl-prev, .owl-carousel .owl-controls .owl-nav .owl-next {
     font-size: 18px;
@@ -26,6 +26,7 @@ max-height: 250px;
     background-color: #fff;
     position: relative;
 }
-.content-novedades header{
-    padding: 15px;
-}
+.content-novedades{background-color: #ffffff;}
+.content-novedades header{padding: 15px;}
+.content-novedades header .iconos-novedades{margin-right: 10px;}
+.content-novedades p.descripcion-novedad{padding: 15px;display: inline-block;}
