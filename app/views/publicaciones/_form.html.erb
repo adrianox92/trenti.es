@@ -1,0 +1,25 @@
+<%= simple_form_for publicacion do |f| %>
+    <div class="row">
+      <div class="col-xs-12">
+        <%= f.input :nombre %>
+      </div>
+      <div class="col-xs-12">
+        <%= f.input :descripcion_corta %>
+      </div>
+      <div class="col-xs-12">
+        <%= f.input :descripcion %>
+      </div>
+      <div class="col-xs-12">
+        <%= f.label :fecha_creacion %>
+
+        <%= f.date_field :fecha_creacion %>
+      </div>
+      <div class="col-xs-12">
+        <%= f.label :destacado %>
+        <%= f.check_box :destacado %>
+      </div>
+      <div class="col-xs-12">
+        <%= f.button :submit, (publicacion.new_record?) ? 'Nueva publicación' : 'Editar publicación', class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>

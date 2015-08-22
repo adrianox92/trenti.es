@@ -16,21 +16,6 @@ ActiveRecord::Schema.define(version: 20150721131334) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categoria", force: :cascade do |t|
-    t.string  "nombre"
-    t.integer "seccion_id"
-  end
-
-  create_table "galerias", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.string   "image_file_size"
-    t.time     "image_updated_at"
-    t.integer  "categoria_id"
-  end
-
   create_table "images", force: :cascade do |t|
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
@@ -38,22 +23,6 @@ ActiveRecord::Schema.define(version: 20150721131334) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-  end
-
-  create_table "post", force: :cascade do |t|
-    t.string   "nombre"
-    t.string   "titulo"
-    t.string   "resumen"
-    t.string   "texto"
-    t.string   "imagen"
-    t.integer  "categoria_id"
-    t.boolean  "destacado"
-    t.time     "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "seccion", force: :cascade do |t|
-    t.string "nombre"
   end
 
   create_table "uploades", force: :cascade do |t|
@@ -65,16 +34,4 @@ ActiveRecord::Schema.define(version: 20150721131334) do
     t.datetime "image_updated_at"
   end
 
-  create_table "galerias", force: :cascade do |t|
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
-  add_foreign_key "categoria", "seccion", name: "categoria_seccion_id_fkey"
-  add_foreign_key "galerias", "categoria", column: "categoria_id", name: "imagenes_galerias_categoria_id_fkey"
-  add_foreign_key "post", "categoria", column: "categoria_id", name: "post_categoria_id"
 end

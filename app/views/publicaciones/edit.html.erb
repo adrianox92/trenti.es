@@ -1,0 +1,11 @@
+<%= render partial: 'gestion/header' %>
+<div class="container">
+  <div class="cabecera-gestion">
+    <header>
+      <h3>Publicaciones > Editar Publicacion > <%= @publicacion.nombre %></h3>
+    </header>
+  </div>
+  <div class="content">
+    <%= render partial: 'publicaciones/form', locals: {publicacion: @publicacion} %>
+  </div>
+</div>

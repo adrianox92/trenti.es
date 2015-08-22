@@ -1,0 +1,7 @@
+.destacado-false, .destacado-true{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url(check.png) no-repeat;
+}
+.destacado-false{  background-position: -40px 0; }
