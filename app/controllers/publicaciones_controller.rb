@@ -5,13 +5,14 @@ class PublicacionesController < ApplicationController
 
   def new
     @publicacion = Publicacion.new
+    common_selectors
   end
 
   def create
-    @publicacion = Publicacion.create(permit_params)
-    if @publicacion.save
+    if Publicacion.create(permit_params)
       redirect_to publicaciones_path
     else
+      common_selectors
       render :new
     end
   end
@@ -21,7 +22,9 @@ class PublicacionesController < ApplicationController
     if @publicacion.update_attributes(permit_params)
       redirect_to publicaciones_path
     else
+      common_selectors
       render :edit
+
     end
   end
 
@@ -35,11 +38,16 @@ class PublicacionesController < ApplicationController
 
   def edit
     @publicacion = Publicacion.find(params[:id])
+    common_selectors
   end
 
 
   private
   def permit_params
-    params.require(:publicacion).permit(:nombre, :descripcion, :descripcion_corta, :fecha_creacion, :destacado, :image)
+    params.require(:publicacion).permit(:nombre, :descripcion, :descripcion_corta, :fecha_creacion, :destacado, :image, :categoria_id, :serie, :tipo_serie)
+  end
+
+  def common_selectors
+    @categorias = Categoria.all.order('id').map{|c| [c.nombre, c.id]}
   end
 end
