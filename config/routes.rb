@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   scope '/gestion' do
     resources :publicaciones
     resources :categorias
+    resources :banners
   end
 
 

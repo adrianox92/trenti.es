@@ -36,7 +36,7 @@
       <div class="form-group col-xs-12">
         <%= f.label :image %>
         <%= f.file_field :image %>
-        <%= image_tag publicacion.image.url, class: 'img-responsive' %>
+        <%= image_tag publicacion.image.url(:ficha_thumb), class: 'img-responsive' %>
       </div>
       <div class="col-xs-12">
         <%= f.button :submit, (publicacion.new_record?) ? 'Nueva publicación' : 'Editar publicación', class: 'btn btn-primary' %>

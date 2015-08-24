@@ -4,6 +4,6 @@ class FrontendController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    @ultimas_publicaciones = Publicacion.where('destacado = ?', true).order('created_at').limit(3)
+    @ultimas_publicaciones = Publicacion.where('destacado = ?', true).order('created_at DESC').limit(3)
   end
 end

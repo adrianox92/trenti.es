@@ -5,3 +5,8 @@
   background: url(check.png) no-repeat;
 }
 .destacado-false{  background-position: -40px 0; }
+
+/* Main progress bar */
+html.turbolinks-progress-bar::before {
+  border-bottom: solid 4px #0095d4;
+}
