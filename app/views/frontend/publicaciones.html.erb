@@ -1,0 +1,27 @@
+<div class="container">
+  <%= will_paginate @publicaciones, renderer: BootstrapPagination::Rails %>
+  <div class="row">
+    <% @publicaciones.each do |i| %>
+        <div class="content-novedades">
+          <a href="<%= publicacion_detalle_path(i.url) %>">
+          <header>
+            <div class="row">
+              <div class="col-xs-12">
+                <h4><%= i.nombre %></h4>
+              </div>
+              <div class="col-xs-6">
+                <i class="fa fa-calendar iconos-novedades"></i><%= i.fecha_creacion.strftime("%d/%m/%Y") %>
+              </div>
+              <div class="col-xs-6">
+                <i class="fa fa-comments iconos-novedades"></i>Comentarios
+              </div>
+            </div>
+          </header>
+          <%= image_tag i.image.url(:ficha_thumb), class: 'img-responsive' %>
+          <p class="descripcion-novedad"><%= i.descripcion_corta %></p>
+          </a>
+        </div>
+    <% end %>
+  </div>
+  <%= will_paginate @publicaciones, renderer: BootstrapPagination::Rails %>
+</div>

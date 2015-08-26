@@ -6,4 +6,8 @@ class FrontendController < ActionController::Base
   def index
     @ultimas_publicaciones = Publicacion.where('destacado = ?', true).order('created_at DESC').limit(3)
   end
+
+  def publicaciones
+   @publicaciones = Publicacion.order('created_at DESC').paginate(:page => params[:page], :per_page => 1)
+  end
 end

@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     resources :categorias
     resources :banners
   end
-
-
+  get 'publicaciones' => 'frontend#publicaciones', as: :publicaciones_frontend
+  get ':url' => 'frontend#publicacion_detalle', as: :publicacion_detalle
 
   root 'frontend#index'
 end

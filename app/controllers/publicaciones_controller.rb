@@ -9,7 +9,10 @@ class PublicacionesController < ApplicationController
   end
 
   def create
-    if Publicacion.create(permit_params)
+    params[:publicacion][:url] = "#{params[:publicacion][:nombre].parameterize}"
+    publicacion = Publicacion.create(permit_params)
+
+    if publicacion.valid?
       redirect_to publicaciones_path
     else
       common_selectors
@@ -18,6 +21,7 @@ class PublicacionesController < ApplicationController
   end
 
   def update
+    params[:publicacion][:url] = "#{params[:publicacion][:nombre].parameterize}"
     @publicacion = Publicacion.find(params[:id])
     if @publicacion.update_attributes(permit_params)
       redirect_to publicaciones_path
@@ -44,7 +48,7 @@ class PublicacionesController < ApplicationController
 
   private
   def permit_params
-    params.require(:publicacion).permit(:nombre, :descripcion, :descripcion_corta, :fecha_creacion, :destacado, :image, :categoria_id, :serie, :tipo_serie)
+    params.require(:publicacion).permit(:nombre, :descripcion, :descripcion_corta, :fecha_creacion, :destacado, :image, :categoria_id, :serie, :tipo_serie, :url)
   end
 
   def common_selectors
