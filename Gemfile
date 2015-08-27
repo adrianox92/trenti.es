@@ -19,7 +19,6 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'paperclip', '~> 4.2.0'
-gem 'dropzonejs-rails', '~> 0.4.16'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -44,7 +43,7 @@ gem 'simple_form'
 # gem 'capistrano-rails', group: :development
 
 # Twitter's Bootstrap, converted to Sass and ready to drop into Rails or Compass. Read more: https://github.com/twbs/bootstrap-sass
-gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootstrap-sass'
 
 # Datepicker for Bootstrap. Read more: https://github.com/Nerian/bootstrap-datepicker-rails
 gem 'bootstrap-datepicker-rails', '1.3.0.2'
