@@ -6,7 +6,6 @@ blobs
 resizes/
 tmp/
 nbproject/
-Gemfile.lock
 public/stylesheets/sitios
 public/export
 public/flash

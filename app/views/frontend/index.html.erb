@@ -1,7 +1,7 @@
 ﻿<div class="container">
   <div class="row">
     <div class="owl-carousel col-xs-12">
-      <%= 12.times do |i| %>
+      <% 12.times do |i| %>
           <div>
             <img src="http://placehold.it/1140x300" class="img-responsive center-block">
           </div>
@@ -33,20 +33,11 @@
                 <p class="descripcion-novedad"><%= i.descripcion_corta %></p>
               </div>
           <% end %>
-          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= render partial: 'frontend/categorias' %>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-4">
-    <header>
-      <h3 class="cabecera">Categorías</h3>
-    </header>
-    <div class="row">
-    <% 10.times do |a| %>
-      <div class="col-xs-6 categorias">
-          <p><%= a %></p>
-      </div>
-    <% end%>
-      </div>
-  </div>
-</div>
 </div>
