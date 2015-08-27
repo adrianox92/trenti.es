@@ -1,0 +1,10 @@
+<%= simple_form_for categoria, html: {multipart: true} do |f| %>
+    <div class="row">
+      <div class="form-group col-xs-12">
+        <%= f.input :nombre %>
+      </div>
+      <div class="col-xs-12">
+        <%= f.button :submit, (categoria.new_record?) ? 'Nueva categoría' : 'Editar categoría', class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>

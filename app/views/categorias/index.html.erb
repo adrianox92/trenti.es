@@ -1,0 +1,42 @@
+<%= render partial: 'gestion/header' %>
+<div class="container">
+  <div class="cabecera-gestion">
+    <header>
+      <h3>Categorías</h3>
+    </header>
+  </div>
+  <div class="content">
+    <%= link_to 'Nueva categoría', new_categoria_path, class: 'btn btn-primary' %>
+    <% if @categorias.count > 0 %>
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <td>Acciones</td>
+            <td>Nombre</td>
+          </tr>
+          </thead>
+          <tbody>
+          <% @categorias.each do |categoria| %>
+              <tr>
+
+                <td><%= link_to '', edit_categoria_path(categoria.id), {class: 'btn fa fa-edit btn-primary', :title => 'Editar categoria', :rel => 'tooltip'} %>
+                  <%= link_to '', categoria_path(categoria.id), {method: :delete, class: 'btn fa fa-trash btn-danger', data: {confirm: "¿Estás seguro?"}, :title => 'Eliminar categoría', :rel => 'tooltip'} %>
+                </td>
+                <td>
+                  <%= categoria.nombre %>
+                </td>
+              </tr>
+
+          <% end %>
+          </tbody>
+          <tfoot>
+          <tr>
+            <td colspan=" 4">Número de registros: <strong><%= @categorias.count %></strong></td>
+          </tr>
+          </tfoot>
+        </table>
+    <% else %>
+        <p>No se han encontrado registros</p>
+    <% end %>
+  </div>
+</div>
