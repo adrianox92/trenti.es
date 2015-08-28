@@ -14,4 +14,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 
   inflect.irregular('login', 'login')
   inflect.irregular('user', 'users')
+  inflect.irregular('banneres', 'banners')
 end

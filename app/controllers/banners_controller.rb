@@ -1,53 +1,39 @@
 class BannersController < ApplicationController
+
+
+  # Módulo para gestionar las librerías / galerías de ficheros
+  include Libraryable
   def index
-    @publicaciones = Publicacion.all
+    @banner = Banner.all
   end
 
   def new
-    @publicacion = Publicacion.new
-    common_selectors
+    @banner = Banner.new
   end
 
   def create
-    if Publicacion.create(permit_params)
-      redirect_to publicaciones_path
+    @banner = Banner.create(banner_params)
+    if @banner.save
+      # send success header
+      render json: { message: "success", fileID: @banner.id }, :status => 200
     else
-      common_selectors
-      render :new
-    end
-  end
-
-  def update
-    @publicacion = Publicacion.find(params[:id])
-    if @publicacion.update_attributes(permit_params)
-      redirect_to publicaciones_path
-    else
-      common_selectors
-      render :edit
-
+      #  you need to send an error header, otherwise Dropzone
+      #  will not interpret the response as an error:
+      render json: { error: @banner.errors.full_messages.join(',')}, :status => 400
     end
   end
 
   def destroy
-    @publicacion = Publicacion.find(params[:id])
-    if @publicacion.present?
-      Publicacion.destroy(params[:id])
-      redirect_to publicaciones_path
+    @banner = Banner.find(params[:id])
+    if @banner.destroy
+      render json: { message: "File deleted from server" }
+    else
+      render json: { message: @banner.errors.full_messages.join(',') }
     end
   end
 
-  def edit
-    @publicacion = Publicacion.find(params[:id])
-    common_selectors
-  end
-
-
   private
-  def permit_params
-    params.require(:publicacion).permit(:nombre, :descripcion, :descripcion_corta, :fecha_creacion, :destacado, :image, :categoria_id, :serie, :tipo_serie)
-  end
-
-  def common_selectors
-    @categorias = Categoria.all.order('id').map{|c| [c.nombre, c.id]}
+  def banner_params
+    params.require(:banner).permit(:image)
   end
 end
