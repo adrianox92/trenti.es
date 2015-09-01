@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <header>
+        <h3 class="cabecera"><%= @publicacion.nombre %></h3>
+      </header>
+      <%= image_tag 'vacio/vacio.png', class: 'center-block img-responsive' %>
+      <p><%= (@publicacion.descripcion).html_safe %></p>
+    </div>
+  </div>
+</div>

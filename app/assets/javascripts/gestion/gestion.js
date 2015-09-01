@@ -3,6 +3,10 @@ $(document).on('ready page:load', function () {
         $('#publicacion_serie, #publicacion_tipo_serie').prop('disabled', true);
     }
 
+    $('#publicacion_descripcion').each(function(i, elem) {
+        $(elem).wysihtml5();
+    });
+
     $('#publicacion_categoria_id').on('change', function(){
        if($(this).val() == 17){
            $('#publicacion_serie, #publicacion_tipo_serie').prop('disabled', false);
@@ -12,7 +16,6 @@ $(document).on('ready page:load', function () {
     });
 
     var model_id = $('#dropzone input').data('id');
-    console.log(model_id);
     var controller_name = $('#dropzone input').data('controller');
 
     $('#dropzone').dropzone({
@@ -83,7 +86,7 @@ $(document).on('ready page:load', function () {
             });
         }
     });
-
+/*
     $('#dropzone').sortable({
         items: 'div.dz-image-preview:not(.dz-error)',
         cancel: 'div.dz-image-preview.dz-error',
@@ -95,6 +98,7 @@ $(document).on('ready page:load', function () {
             });
         }
     });
+    */
 
     $('#dropzone').popover({
         selector: '.glyphicon-warning-sign',
@@ -106,4 +110,5 @@ $(document).on('ready page:load', function () {
         },
         container: 'body'
     });
+
 });

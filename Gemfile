@@ -53,6 +53,9 @@ gem 'exception_notification', '~> 4.0.1'
 
 gem 'font-awesome-sass'
 
+#https://github.com/Nerian/bootstrap-wysihtml5-rails
+gem 'bootstrap-wysihtml5-rails'
+
 group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

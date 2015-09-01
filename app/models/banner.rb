@@ -4,5 +4,6 @@ class Banner < ActiveRecord::Base
 
   validates_attachment 	:image,
                         :presence => true,
-                        :content_type => { :content_type => /\Aimage\/.*\Z/ }
+                        :content_type => { :content_type => /\Aimage\/.*\Z/ },
+                        default_url: "vacio/vacio.png"
 end

@@ -10,4 +10,8 @@ class FrontendController < ActionController::Base
   def publicaciones
    @publicaciones = Publicacion.order('created_at DESC').paginate(:page => params[:page], :per_page => 1)
   end
+
+  def publicacion_detalle
+    @publicacion = Publicacion.find_by_url(params[:url])
+  end
 end
