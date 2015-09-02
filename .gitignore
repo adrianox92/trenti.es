@@ -1,15 +1,7 @@
 .bundle
 db/*.sqlite3
 log/
-blobs/
-blobs
-resizes/
 tmp/
-nbproject/
-public/stylesheets/sitios
-public/export
-public/flash
-public/catalogo_itra
 rss/
 .idea/
 mnt_blobls.sh
@@ -19,4 +11,3 @@ mnt_blobls.sh
 .yardopts
 .yardoc/*
 doc/*
-public/javascripts/gestion/jato_version_model.js
