@@ -159,3 +159,17 @@ header h3.cabecera {
         text-align: center;
     }
 }
+
+/* Footer */
+#pie-pagina{
+  padding: 15px 0;
+  margin-top: 20px;
+  background-color: #0095d4;
+  ul{
+    li{
+      a{
+        color:#000000;
+      }
+    }
+  }
+}

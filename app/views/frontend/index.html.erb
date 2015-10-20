@@ -1,6 +1,6 @@
 ﻿<div class="container">
   <div class="row">
-    <div class="owl-carousel col-xs-12">
+    <div class="owl-carousel">
       <% 12.times do |i| %>
           <div>
             <img src="http://placehold.it/1140x300" class="img-responsive center-block">
@@ -30,7 +30,7 @@
                       </div>
                     </div>
                   </header>
-                  <%= image_tag i.image.url(:ficha_thumb), class: 'center-block img-responsive' %>
+                  <%= image_tag i.image.url(:home), class: 'center-block img-responsive' %>
                   <p class="descripcion-novedad"><%= i.descripcion_corta %></p>
                 </a>
               </div>

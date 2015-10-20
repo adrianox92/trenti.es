@@ -2,9 +2,12 @@
   <h3 class="cabecera">Categorías</h3>
 </header>
 <div class="row">
-  <% 10.times do |a| %>
+  <% @categorias.each_with_index do |categoria, index| %>
       <div class="col-xs-6 categorias">
-        <p><%= a %></p>
+        <%= image_tag categoria.image.url(:resume), class: 'img-responsive' %>
       </div>
+      <% if index.odd? %>
+      <div class="col-xs-12"></div>
+      <% end %>
   <% end %>
 </div>

@@ -86,20 +86,6 @@ $(document).on('ready page:load', function () {
             });
         }
     });
-/*
-    $('#dropzone').sortable({
-        items: 'div.dz-image-preview:not(.dz-error)',
-        cancel: 'div.dz-image-preview.dz-error',
-        update: function (event, ui) {
-            $.ajax({
-                type: 'POST',
-                url: '/library_sort/' + model_id + '/' + controller_name,
-                data: 'ficheros=' + $('#dropzone').sortable('toArray', {attribute: 'data-id'})
-            });
-        }
-    });
-    */
-
     $('#dropzone').popover({
         selector: '.glyphicon-warning-sign',
         trigger: 'hover',

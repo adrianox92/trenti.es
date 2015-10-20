@@ -8,21 +8,19 @@ class CategoriasController < ApplicationController
   end
 
   def create
-    params[:publicacion][:url] = "#{params[:publicacion][:nombre].parameterize}"
     publicacion = Categoria.create(permit_params)
 
     if publicacion.valid?
-      redirect_to publicaciones_path
+      redirect_to categorias_path
     else
       render :new
     end
   end
 
   def update
-    params[:publicacion][:url] = "#{params[:publicacion][:nombre].parameterize}"
     @categoria = Categoria.find(params[:id])
     if @categoria.update_attributes(permit_params)
-      redirect_to publicaciones_path
+      redirect_to categorias_path
     else
       render :edit
 
@@ -33,7 +31,7 @@ class CategoriasController < ApplicationController
     @categoria = Categoria.find(params[:id])
     if @categoria.present?
       Categoria.destroy(params[:id])
-      redirect_to publicaciones_path
+      redirect_to categorias_path
     end
   end
 
@@ -44,7 +42,7 @@ class CategoriasController < ApplicationController
 
   private
   def permit_params
-    params.require(:categoria).permit(:nombre)
+    params.require(:categoria).permit(:nombre, :image)
   end
 
 end

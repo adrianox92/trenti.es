@@ -4,8 +4,27 @@
       <header>
         <h3 class="cabecera"><%= @publicacion.nombre %></h3>
       </header>
-      <%= image_tag 'vacio/vacio.png', class: 'center-block img-responsive' %>
+      <%= image_tag @publicacion.image.url(:publicacion), class: 'center-block' %>
       <p><%= (@publicacion.descripcion).html_safe %></p>
     </div>
+    <% if @publicaciones_relacionadas.count > 0 %>
+    <div class="col-xs-12">
+      <header>
+        <h3 class="cabecera">Publicaciones relacionadas</h3>
+      </header>
+      <div class="row">
+
+            <% @publicaciones_relacionadas.each do |relacionada| %>
+                <div class="col-xs-12 col-sm-4">
+                  <a href="<%= publicacion_detalle_path(relacionada.url) %>">
+                    <%= image_tag relacionada.image.url(:home), class: 'center-block img-responsive' %>
+                    <%= relacionada.nombre %>
+                  </a>
+                </div>
+            <% end %>
+
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>

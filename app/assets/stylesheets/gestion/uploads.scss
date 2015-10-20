@@ -1,5 +1,6 @@
 /* dropzone */
 .dropzone {
+  max-height: 450px;
   position: relative;
   padding: 15px 0;
   border: 5px dotted #ddd;
@@ -12,7 +13,7 @@
     font-weight: bold;
 
     span {
-      font-size: 150px;
+      font-size: 68px;
       color: #ddd;
       display: block;
     }
