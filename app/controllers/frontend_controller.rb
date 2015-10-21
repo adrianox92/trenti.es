@@ -20,4 +20,7 @@ class FrontendController < ActionController::Base
       @publicaciones_relacionadas = Publicacion.where('id NOT IN(?)', @publicacion.id).limit(3)
     end
   end
+  def about
+
+  end
 end

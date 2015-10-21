@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     resources :banners
   end
   get 'publicaciones' => 'frontend#publicaciones', as: :publicaciones_frontend
-  get ':url' => 'frontend#publicacion_detalle', as: :publicacion_detalle
+  get '/publicacion/:url' => 'frontend#publicacion_detalle', as: :publicacion_detalle
+  get 'sobre-mi' => 'frontend#about', as: :about
 
   #Gestión de las librerías *******************************************************************************************
   post 'library_upload(/:id/:modelo)' => 'banners#library_upload'

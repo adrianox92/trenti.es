@@ -4,10 +4,10 @@ class Publicacion < ActiveRecord::Base
   validates :nombre, :descripcion_corta, :descripcion, :fecha_creacion, presence: true
 
   has_attached_file :image,
-                    styles: {home: '750x562^', publicacion: '1140x875^'},
+                    styles: {home: '640x480^', publicacion: '1140x875^'},
                     default_style: :home,
                     :convert_options => {#redimensiones con relleno
-                                         :home => "-background transparent -compose Copy -gravity center -extent 750x562",
+                                         :home => "-background transparent -compose Copy -gravity center -extent 640x480",
                                          :publicacion => "-background transparent -compose Copy -gravity center -extent 1140x875"
                     },
                     url: '/blobs/:class/:attachment/:id/:style/:basename.:extension',
