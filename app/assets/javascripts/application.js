@@ -7,4 +7,6 @@
 //= require comunes
 //= require gestion/gestion
 //= require dropzone
+//= require isotope.min
+//= require frontend/galeria
 

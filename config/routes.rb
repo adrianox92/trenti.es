@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'publicaciones' => 'frontend#publicaciones', as: :publicaciones_frontend
   get '/publicacion/:url' => 'frontend#publicacion_detalle', as: :publicacion_detalle
   get 'sobre-mi' => 'frontend#about', as: :about
+  get 'galeria' => 'frontend#galeria', as: :galeria
 
   #Gestión de las librerías *******************************************************************************************
   post 'library_upload(/:id/:modelo)' => 'banners#library_upload'
