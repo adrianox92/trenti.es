@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :publicaciones
     resources :categorias
     resources :banners
+    resources :fotos
   end
   get 'publicaciones' => 'frontend#publicaciones', as: :publicaciones_frontend
   get '/publicacion/:url' => 'frontend#publicacion_detalle', as: :publicacion_detalle

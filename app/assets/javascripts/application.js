@@ -8,5 +8,6 @@
 //= require gestion/gestion
 //= require dropzone
 //= require isotope.min
+//= require chosen-jquery
 //= require frontend/galeria
 

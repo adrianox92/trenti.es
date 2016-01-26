@@ -1,7 +1,7 @@
 class Publicacion < ActiveRecord::Base
   self.table_name =  'playmobil.publicacion'
 
-  validates :nombre, :descripcion_corta, :descripcion, :fecha_creacion, presence: true
+  validates :nombre, :descripcion_corta, :descripcion, :fecha_creacion, :tags,  presence: true
 
   has_attached_file :image,
                     styles: {home: '640x480^', publicacion: '1140x875^'},

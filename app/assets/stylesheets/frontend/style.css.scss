@@ -173,3 +173,24 @@ header h3.cabecera {
     }
   }
 }
+/* Scroll Up */
+
+.scrollup {
+  border:1px solid#cccccc;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+  display: none;
+  background-color: #0095d4;
+  span{
+    font-size: 28px;
+    color: #ffffff;
+    padding: 5px;
+  }
+}
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+  width: 100% !important;
+}
